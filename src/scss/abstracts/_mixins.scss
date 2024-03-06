@@ -1,0 +1,57 @@
+@mixin laptop {
+    @media screen and (max-width: 1440px) {
+      @content;
+    }
+  }
+  
+  @mixin tablet {
+    @media screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+  
+  @mixin small_tablet {
+    @media screen and (max-width: 975px) {
+      @content;
+    }
+  }
+  
+  @mixin phone {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+  }
+  
+  @mixin background {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  @mixin after {
+    &::after {
+      @content;
+    }
+  }
+  
+  @mixin before {
+    &::before {
+      @content;
+    }
+  }
+  
+  @mixin hover {
+    &:hover {
+      @content;
+    }
+  }
+  
+  @mixin darker {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+  }

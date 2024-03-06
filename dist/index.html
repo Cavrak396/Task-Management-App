@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="js/controller.js" type="module"></script>
+    <title>Task Management</title>
+<script defer src="js/script.js"></script><link href="css/style.css" rel="stylesheet"></head>
+
+<body>
+    <main>
+        <section class="platform">
+            <aside class="platform__boards">
+                <span class="platform__logo">Space for logo</span>
+                <span class="platform__boards-tag">
+                    All boards
+                    <span class="platform__boards-number js-boards-num"></span>
+                </span>
+                <ul class="platform__boards-list js-boards-list">
+                    <li class="platform__boards-item">Platform Launch</li>
+                </ul>
+                <button type="button" class="platform__board-btn js-board-btn">+Create New Board</button>
+            </aside>
+            <div class="platform__user-tasks">
+                <div class="platform__task-header">
+                    <span class="platform__task-title">Platform launch</span>
+                    <div class="platform__task-options">
+                        <button type="button" class="platform__task-button">+Add New Task</button>
+                        <button type="button" class="platform__task-theme js-theme-bar">
+                            <div class="platform__task-scroll js-theme-scroll"></div>
+                        </button>
+                    </div>
+                </div>
+                <div class="platform__task-panel"></div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

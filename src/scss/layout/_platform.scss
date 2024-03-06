@@ -1,0 +1,68 @@
+.platform {
+  display: flex;
+  min-height: 100svh;
+  font-family: $roboto;
+}
+
+.platform__boards {
+  max-width: 15%;
+  flex: 1 1 15%;
+  background-color: $lightPurple;
+  border-right: solid 1px $gray;
+}
+
+.platform__user-tasks {
+  max-width: 85%;
+  flex: 1 1 85%;
+}
+
+.platform__task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $lightPurple;
+  color: $white;
+  padding: 20px;
+}
+
+.platform__task-title {
+  font-size: 25px;
+  font-weight: $lightSemi;
+}
+
+.platform__task-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 250px;
+  flex: 1 1 250px;
+}
+
+.moving-theme-scroll {
+  left: 100%;
+  bottom: 0;
+  transform: translate(-100%, 0);
+}
+
+.platform__task-panel {
+  background-color: $darkPurple;
+  min-height: 100svh;
+}
+
+.platform__logo,
+.platform__boards-number,
+.platform__boards-tag {
+  display: block;
+}
+
+.platform__logo {
+  margin-bottom: 15px;
+}
+
+.platform__boards-tag {
+  color: $gray;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}

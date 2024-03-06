@@ -1,0 +1,55 @@
+button {
+  border: none;
+  background: none;
+}
+
+.platform__task-button {
+  color: $white;
+  background-color: $lilla;
+  font-size: 17px;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-weight: $lightSemi;
+
+  @include hover {
+    cursor: pointer;
+    transition: $regular;
+    transform: scale(1.05);
+  }
+}
+
+.platform__task-theme {
+  position: relative;
+  max-width: 50px;
+  flex: 1 1 50px;
+  min-height: 20px;
+  border: solid 1px $white;
+  border-radius: 20px;
+  background-color: $white;
+}
+
+.platform__task-scroll {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 20px;
+  height: 100%;
+  background-color: $lilla;
+  border-radius: 50%;
+  transition: $regular;
+
+  @include hover {
+    cursor: pointer;
+  }
+}
+
+.platform__board-btn {
+  color: $lilla;
+  font-size: 17px;
+
+  @include hover {
+    cursor: pointer;
+    transition: $regular;
+    opacity: 0.8;
+  }
+}

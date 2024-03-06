@@ -1,0 +1,267 @@
+/*!************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/scss/style.scss ***!
+  \************************************************************************************************************************************************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+.platform__task-button {
+  color: rgb(255, 255, 255);
+  background-color: rgb(100, 96, 192);
+  font-size: 17px;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+.platform__task-button:hover {
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+  transform: scale(1.05);
+}
+
+.platform__task-theme {
+  position: relative;
+  max-width: 50px;
+  flex: 1 1 50px;
+  min-height: 20px;
+  border: solid 1px rgb(255, 255, 255);
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+.platform__task-scroll {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 20px;
+  height: 100%;
+  background-color: rgb(100, 96, 192);
+  border-radius: 50%;
+  transition: all ease-in-out 0.5s;
+}
+.platform__task-scroll:hover {
+  cursor: pointer;
+}
+
+.platform__board-btn {
+  color: rgb(100, 96, 192);
+  font-size: 17px;
+}
+.platform__board-btn:hover {
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+  opacity: 0.8;
+}
+
+.platform {
+  display: flex;
+  min-height: 100svh;
+  font-family: "Roboto";
+}
+
+.platform__boards {
+  max-width: 15%;
+  flex: 1 1 15%;
+  background-color: rgb(48, 44, 60);
+  border-right: solid 1px rgb(150, 150, 150);
+}
+
+.platform__user-tasks {
+  max-width: 85%;
+  flex: 1 1 85%;
+}
+
+.platform__task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(48, 44, 60);
+  color: rgb(255, 255, 255);
+  padding: 20px;
+}
+
+.platform__task-title {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.platform__task-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 250px;
+  flex: 1 1 250px;
+}
+
+.moving-theme-scroll {
+  left: 100%;
+  bottom: 0;
+  transform: translate(-100%, 0);
+}
+
+.platform__task-panel {
+  background-color: rgb(40, 36, 44);
+  min-height: 100svh;
+}
+
+.platform__logo,
+.platform__boards-number,
+.platform__boards-tag {
+  display: block;
+}
+
+.platform__logo {
+  margin-bottom: 15px;
+}
+
+.platform__boards-tag {
+  color: rgb(150, 150, 150);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
