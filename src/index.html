@@ -15,15 +15,15 @@
 
 <body>
     <main>
-        <section class="platform">
+        <section class="platform js-platform">
             <aside class="platform__boards">
-                <span class="platform__logo">Space for logo</span>
+                <span class="platform__logo">MySelf helper</span>
                 <span class="platform__boards-tag">
                     All boards
                     <span class="platform__boards-number js-boards-num"></span>
                 </span>
                 <ul class="platform__boards-list js-boards-list">
-                    <li class="platform__boards-item">Platform Launch</li>
+                    <li class="platform__boards-item js-boards-item activate-board">Platform Launch</li>
                 </ul>
                 <button type="button" class="platform__board-btn js-board-btn">+Create New Board</button>
             </aside>
@@ -31,13 +31,37 @@
                 <div class="platform__task-header">
                     <span class="platform__task-title">Platform launch</span>
                     <div class="platform__task-options">
-                        <button type="button" class="platform__task-button">+Add New Task</button>
+                        <button type="button" class="platform__task-button js-new-task">+Add New Task</button>
                         <button type="button" class="platform__task-theme js-theme-bar">
                             <div class="platform__task-scroll js-theme-scroll"></div>
                         </button>
                     </div>
                 </div>
-                <div class="platform__task-panel"></div>
+                <div class="platform__task-panel">
+                    <div class="platform__task-line">
+                        <div class="platform__task-holder">
+                            <span class="platform__task-tag">
+                                <span class="platform__task-status platform__task-status--todo"></span>
+                                <span class="platform__task-plan">TODO</span>
+                            </span>
+                            <ul class="platform__task-list js-todo"></ul>
+                        </div>
+                        <div class="platform__task-holder">
+                            <span class="platform__task-tag">
+                                <span class="platform__task-status platform__task-status--doing"></span>
+                                <span class="platform__task-plan">DOING</span>
+                            </span>
+                            <ul class="platform__task-list js-doing"></ul>
+                        </div>
+                        <div class="platform__task-holder">
+                            <span class="platform__task-tag">
+                                <span class="platform__task-status platform__task-status--done"></span>
+                                <span class="platform__task-plan">DONE</span>
+                            </span>
+                            <ul class="platform__task-list js-done"></ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

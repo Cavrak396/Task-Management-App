@@ -53,3 +53,42 @@ button {
     opacity: 0.8;
   }
 }
+
+.platform__confirm-button {
+  padding: 12px 25px;
+  background-color: $white;
+  color: $white;
+  font-size: 16px;
+  border-radius: 20px;
+  margin-right: 10px;
+  background-color: $lilla;
+  font-weight: $semi;
+
+  @include hover {
+    cursor: pointer;
+    transition: $regular;
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.platform__subtask-button,
+.platform__newTask-button {
+  width: 100%;
+  font-size: 14px;
+  border-radius: 20px;
+  font-weight: $semi;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.platform__subtask-button {
+  background-color: $white;
+  color: $lilla;
+  margin-bottom: 20px;
+}
+
+.platform__newTask-button {
+  background-color: $lilla;
+  color: $white;
+}

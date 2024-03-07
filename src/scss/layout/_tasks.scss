@@ -1,0 +1,42 @@
+.platform__task-panel {
+  padding: 20px 20px 0 20px;
+}
+
+.platform__task-line {
+  display: flex;
+}
+
+.platform__task-holder {
+  max-width: 33.33%;
+  flex: 1 1 33.33%;
+}
+
+.platform__task-tag {
+  display: flex;
+  align-content: center;
+}
+
+.platform__task-status {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.platform__task-plan {
+  color: $gray;
+  font-size: 15px;
+  letter-spacing: 1.2px;
+}
+
+.platform__task-status--todo {
+  background-color: $aqua;
+}
+
+.platform__task-status--doing {
+  background-color: $lilla;
+}
+
+.platform__task-status--done {
+  background-color: $green;
+}

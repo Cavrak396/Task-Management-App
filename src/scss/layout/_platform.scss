@@ -1,4 +1,5 @@
 .platform {
+  position: relative;
   display: flex;
   min-height: 100svh;
   font-family: $roboto;
@@ -9,6 +10,7 @@
   flex: 1 1 15%;
   background-color: $lightPurple;
   border-right: solid 1px $gray;
+  padding-top: 25px;
 }
 
 .platform__user-tasks {
@@ -23,6 +25,7 @@
   background-color: $lightPurple;
   color: $white;
   padding: 20px;
+  border-bottom: $gray solid 1px;
 }
 
 .platform__task-title {
@@ -50,13 +53,16 @@
 }
 
 .platform__logo,
-.platform__boards-number,
 .platform__boards-tag {
   display: block;
+  padding-left: 20px;
 }
 
 .platform__logo {
-  margin-bottom: 15px;
+  font-size: 30px;
+  margin-bottom: 25px;
+  font-weight: $semi;
+  color: $white;
 }
 
 .platform__boards-tag {
@@ -65,4 +71,18 @@
   font-size: 12px;
   letter-spacing: 1px;
   margin-bottom: 20px;
+}
+
+.platform__boards-item {
+  color: $white;
+  max-width: 260px;
+  padding: 15px 10px;
+  border-radius: 0 20px 20px 0;
+  margin-bottom: 15px;
+
+  @include hover {
+    cursor: pointer;
+    transition: $regular;
+    background-color: $lilla;
+  }
 }
