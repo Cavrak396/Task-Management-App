@@ -244,6 +244,20 @@ button {
   color: rgb(255, 255, 255);
 }
 
+.platform__task-remover {
+  font-size: 17px;
+  font-weight: 600;
+  background-color: rgb(100, 96, 192);
+  color: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+.platform__task-remover:hover {
+  cursor: pointer;
+  background-color: rgb(40, 36, 44);
+  transition: all ease-in-out 0.5s;
+}
+
 .platform {
   position: relative;
   display: flex;
@@ -385,10 +399,10 @@ button {
 .platform__task-label,
 .platform__task-input {
   display: block;
+  color: rgb(255, 255, 255);
 }
 
 .platform__task-label {
-  color: rgb(255, 255, 255);
   margin-bottom: 5px;
   font-size: 14px;
 }
@@ -415,6 +429,35 @@ button {
   border-radius: 10px;
   margin-bottom: 30px;
   padding-left: 10px;
+}
+
+.platform__task-stats {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  padding: 20px 30px;
+  background-color: rgb(48, 44, 60);
+  border-radius: 10px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.platform__task-statsTag {
+  display: block;
+  font-size: 23px;
+  letter-spacing: 1.3px;
+  margin-bottom: 2px;
+}
+
+.platform__task-date {
+  font-size: 13px;
+  color: rgb(150, 150, 150);
+}
+
+.platform__task-statsDescription {
+  margin: 20px 0;
 }
 
 .platform__task-panel {
@@ -458,4 +501,33 @@ button {
 
 .platform__task-status--done {
   background-color: rgb(144, 238, 144);
+}
+
+.platform__task-item {
+  background-color: rgb(48, 44, 60);
+  max-width: 300px;
+  padding: 25px;
+  border-radius: 15px;
+}
+.platform__task-item:hover {
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+  transform: scale(1.05);
+}
+
+.platform__task-name,
+.platform__task-subtask {
+  display: block;
+  letter-spacing: 1.2px;
+}
+
+.platform__task-name {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.platform__task-subtask {
+  color: rgb(150, 150, 150);
+  font-size: 14px;
 }

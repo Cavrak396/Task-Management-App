@@ -40,3 +40,33 @@
 .platform__task-status--done {
   background-color: $green;
 }
+
+.platform__task-item {
+  background-color: $lightPurple;
+  max-width: 300px;
+  padding: 25px;
+  border-radius: 15px;
+
+  @include hover {
+    cursor: pointer;
+    transition: $regular;
+    transform: scale(1.05);
+  }
+}
+
+.platform__task-name,
+.platform__task-subtask {
+  display: block;
+  letter-spacing: 1.2px;
+}
+
+.platform__task-name {
+  color: $white;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.platform__task-subtask {
+  color: $gray;
+  font-size: 14px;
+}

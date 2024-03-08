@@ -52,10 +52,10 @@
 .platform__task-label,
 .platform__task-input {
   display: block;
+  color: $white;
 }
 
 .platform__task-label {
-  color: $white;
   margin-bottom: 5px;
   font-size: 14px;
 }
@@ -82,4 +82,34 @@
   border-radius: 10px;
   margin-bottom: 30px;
   padding-left: 10px;
+}
+
+// Status
+.platform__task-stats {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  padding: 20px 30px;
+  background-color: $lightPurple;
+  border-radius: 10px;
+  text-align: center;
+  color: $white;
+}
+
+.platform__task-statsTag {
+  display: block;
+  font-size: 23px;
+  letter-spacing: 1.3px;
+  margin-bottom: 2px;
+}
+
+.platform__task-date {
+  font-size: 13px;
+  color: $gray;
+}
+
+.platform__task-statsDescription {
+  margin: 20px 0;
 }

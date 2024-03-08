@@ -92,3 +92,18 @@ button {
   background-color: $lilla;
   color: $white;
 }
+
+.platform__task-remover {
+  font-size: 17px;
+  font-weight: $semi;
+  background-color: $lilla;
+  color: $white;
+  border-radius: 20px;
+  padding: 10px 15px;
+
+  @include hover {
+    cursor: pointer;
+    background-color: $darkPurple;
+    transition: $regular;
+  }
+}

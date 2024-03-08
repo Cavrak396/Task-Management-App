@@ -11,9 +11,9 @@ const handleBoards = function () {
   boardsView._handleBoard(model.boards);
 };
 
-const handleTasks = function() {
-tasksView._handleTask()
-}
+const handleTasks = function () {
+  tasksView._handleTask();
+};
 
 handleTheme();
 handleBoards();
