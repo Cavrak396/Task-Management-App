@@ -5,6 +5,8 @@ class TaskView extends View {
   confirmTaskBtn;
   taskSetup;
   task;
+  subTaskBtn;
+  subTaskInput;
   taskValues = {
     taskName: "",
     taskSubtasks: "",
@@ -13,11 +15,11 @@ class TaskView extends View {
 
   _handleTask() {
     this.createTaskBtn.addEventListener("click", () => {
-      this._createCloud();
+      this._createTaskForm();
     });
   }
 
-  _createCloud() {
+  _createTaskForm() {
     const markup = `
     <div class="platform__task-setup js-task-setup">
     <span class="platform__task-tag"> Add New Task </span>
@@ -26,10 +28,10 @@ class TaskView extends View {
      <input type="text" class="platform__task-input js-title-input" id="title" name="title" placeholder="e.g Take coffe break">
      <label for="description" class="platform__task-label"> Description </label>
      <input type="text" class="platform__task-input platform__task-description js-task-desc" id="description" name="description" placeholder="e.g It's always goot to take a break. This is 15 minute to break.">
-     <div>
+     <div class="platform__subtask-holder js-subtask-holder">
      <label for="subtask" class="platform__task-label"> Subtasks </label>
      <input type="text" class="platform__task-input js-subtask-input" id="subtask" name="subtask" placeholder="e.g Make coffe">
-     <button type="button" class="platform__subtask-button">+Add New Subtask</button>
+     <button type="button" class="platform__subtask-button js-subtask-button">+Add New Subtask</button>
      </div>
      <label for="status" class="platform__task-label"> Status </label>
      <select class="platform__task-chooser js-status" id="status" name="status" >
@@ -45,7 +47,25 @@ class TaskView extends View {
     this.parentEl.insertAdjacentHTML("afterbegin", markup);
     this.confirmTaskBtn = this.parentEl.querySelector(".js-confirmTask-btn");
     this.taskSetup = this.parentEl.querySelector(".js-task-setup");
+    this.subTaskBtn = this.parentEl.querySelector(".js-subtask-button");
+    this.subTaskInput = this.parentEl.querySelector(".js-subtask-input");
     this._confirmTask();
+    this._handleSubtask();
+  }
+
+  _handleSubtask() {
+    this.subTaskBtn.addEventListener("click", () => {
+      if (this.subTaskInput.value) {
+        const markup = `
+        <div class='platform__new-subtasks'>
+         <input class="platform__task-input platform__task-input--subtask js-subtask-input" placeholder="e.g Go to walk">
+         <button type="button" class="platform__new-subtaskBtn"> Remove </button>
+        </div>
+        `;
+
+        this.subTaskInput.insertAdjacentHTML("afterend", markup);
+      }
+    });
   }
 
   _confirmTask() {
@@ -95,20 +115,27 @@ class TaskView extends View {
     this.task.addEventListener("click", () => {
       // Create markup
       const markup = `
-      <div class="platform__task-stats"> 
+      <div class="platform__task-stats js-stats"> 
       <span class="platform__task-statsTag">${this.taskValues.taskName}</span>
       <span class="platform__task-date"> date: ${this._getDate().join(
         "."
       )} </span>
-      <ul class="platform__task-subtasks"></ul>
+      <ul class="platform__task-subtasks">
+      <li class="platform__task-subtask">${this.taskValues.taskSubtasks} </li>
+      </ul>
       <p class="platform__task-statsDescription"> ${
         this.taskValues.taskDescription
       }</p>
-      <button type="button" class="platform__task-remover"> Remove your task? :) </button>
+      <button type="button" class="platform__task-remover js-taskStatus-remover"> Remove your task? :) </button>
       </div>
       `;
 
       this.parentEl.insertAdjacentHTML("afterbegin", markup);
+
+      const removeBtn = this.parentEl.querySelector(".js-taskStatus-remover");
+      removeBtn.addEventListener("click", () => {
+        removeBtn.closest(".js-stats").remove();
+      });
     });
   }
 }

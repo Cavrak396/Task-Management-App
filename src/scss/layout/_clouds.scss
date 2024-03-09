@@ -55,6 +55,16 @@
   color: $white;
 }
 
+.platform__new-subtasks {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.platform__task-input--subtask {
+  margin-bottom: 0 !important;
+}
+
 .platform__task-label {
   margin-bottom: 5px;
   font-size: 14px;
@@ -102,12 +112,14 @@
   display: block;
   font-size: 23px;
   letter-spacing: 1.3px;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
 }
 
 .platform__task-date {
+  display: block;
   font-size: 13px;
   color: $gray;
+  margin-bottom: 7px;
 }
 
 .platform__task-statsDescription {

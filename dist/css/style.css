@@ -205,6 +205,11 @@ button {
   transition: all ease-in-out 0.5s;
   opacity: 0.8;
 }
+@media screen and (max-width: 1200px) {
+  .platform__board-btn {
+    font-size: 15px;
+  }
+}
 
 .platform__confirm-button {
   padding: 12px 25px;
@@ -324,6 +329,11 @@ button {
   font-weight: 600;
   color: rgb(255, 255, 255);
 }
+@media screen and (max-width: 1200px) {
+  .platform__logo {
+    font-size: 25px;
+  }
+}
 
 .platform__boards-tag {
   color: rgb(150, 150, 150);
@@ -344,6 +354,11 @@ button {
   cursor: pointer;
   transition: all ease-in-out 0.5s;
   background-color: rgb(100, 96, 192);
+}
+@media screen and (max-width: 1200px) {
+  .platform__boards-item {
+    font-size: 15px;
+  }
 }
 
 .platform__confirm-board {
@@ -402,6 +417,16 @@ button {
   color: rgb(255, 255, 255);
 }
 
+.platform__new-subtasks {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.platform__task-input--subtask {
+  margin-bottom: 0 !important;
+}
+
 .platform__task-label {
   margin-bottom: 5px;
   font-size: 14px;
@@ -448,12 +473,14 @@ button {
   display: block;
   font-size: 23px;
   letter-spacing: 1.3px;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
 }
 
 .platform__task-date {
+  display: block;
   font-size: 13px;
   color: rgb(150, 150, 150);
+  margin-bottom: 7px;
 }
 
 .platform__task-statsDescription {

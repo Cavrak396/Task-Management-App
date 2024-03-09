@@ -63,6 +63,10 @@
   margin-bottom: 25px;
   font-weight: $semi;
   color: $white;
+
+  @include tablet {
+    font-size: 25px;
+  }
 }
 
 .platform__boards-tag {
@@ -84,5 +88,9 @@
     cursor: pointer;
     transition: $regular;
     background-color: $lilla;
+  }
+
+  @include tablet {
+    font-size: 15px;
   }
 }
