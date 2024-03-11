@@ -12,7 +12,7 @@ const handleBoards = function () {
 };
 
 const handleTasks = function () {
-  tasksView._handleTask();
+  tasksView._createTaskForm();
 };
 
 handleTheme();

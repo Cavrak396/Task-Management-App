@@ -480,11 +480,36 @@ button {
   display: block;
   font-size: 13px;
   color: rgb(150, 150, 150);
-  margin-bottom: 7px;
+  margin-bottom: 20px;
 }
 
 .platform__task-statsDescription {
   margin: 20px 0;
+}
+
+.platform__task-subtaskName {
+  margin-bottom: 10px;
+}
+
+.platform__confirm-markup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 50px 0;
+  z-index: 20;
+  background-color: rgb(48, 44, 60);
+  border-radius: 20px;
+}
+
+.platform__confirm-question {
+  display: block;
+  margin: 0 auto;
+  max-width: 120px;
+  color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+  font-size: 18px;
 }
 
 .platform__task-panel {
@@ -535,6 +560,7 @@ button {
   max-width: 300px;
   padding: 25px;
   border-radius: 15px;
+  margin-bottom: 20px;
 }
 .platform__task-item:hover {
   cursor: pointer;
