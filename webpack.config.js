@@ -44,9 +44,9 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: "src/fonts", to: "fonts" },
+        { from: "src/assets/fonts", to: "fonts" },
         { from: "src/js", to: "js" },
-        { from: "src/images", to: "images" },
+        { from: "src/assets/images", to: "images" },
       ],
     }),
   ],

@@ -43,6 +43,30 @@ button {
   }
 }
 
+.platform__boards-button {
+  color: $white;
+  font-size: 16px;
+  font-weight: $lightSemi;
+
+  @include hover {
+    cursor: pointer;
+  }
+}
+
+.platform__boards-clear {
+  position: relative;
+  z-index: 20;
+  max-width: 25px;
+  min-height: 25px;
+  cursor: pointer;
+}
+
+.platform__boards-close {
+  max-width: 100%;
+  max-height: 100%;
+  filter: invert(100%);
+}
+
 .platform__board-btn {
   color: $lilla;
   font-size: 17px;
