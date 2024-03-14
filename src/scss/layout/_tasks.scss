@@ -4,6 +4,11 @@
 
 .platform__task-line {
   display: flex;
+
+  @include phone {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .platform__task-holder {
@@ -53,6 +58,10 @@
     transition: $regular;
     transform: scale(1.05);
   }
+
+  @include phone {
+    padding: 17px;
+  }
 }
 
 .platform__task-name,
@@ -65,9 +74,18 @@
   color: $white;
   font-size: 18px;
   margin-bottom: 8px;
+
+  @include phone {
+    font-size: 15px;
+  }
 }
 
 .platform__task-subtask {
   color: $gray;
   font-size: 14px;
+
+  @include phone {
+    font-size: 12px;
+    line-height: 15px;
+  }
 }

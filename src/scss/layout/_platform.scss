@@ -47,7 +47,13 @@
   transform: translate(-100%, 0);
 }
 
+.platform__panel-holder {
+  background-color: $darkPurple;
+  height: 100svh;
+}
+
 .platform__task-panel {
+  position: relative;
   background-color: $darkPurple;
   min-height: 100svh;
 }
@@ -95,6 +101,6 @@
   }
 
   @include tablet {
-    font-size: 15px;
+    max-width: 110px;
   }
 }

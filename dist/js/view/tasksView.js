@@ -17,6 +17,9 @@ class TaskView extends View {
     this.createTaskBtn.addEventListener("click", () => {
       const markup = `
       <div class="platform__task-setup js-task-setup">
+      <button type="button" class="platform__task-close js-closeSetup">
+       <img src="././images/close.png" class="platform__close-setup"> 
+       </button>
       <span class="platform__task-tag"> Add New Task </span>
       <form class="platform__task-form">
       <label for="title" class="platform__task-label"> Title </label>
@@ -50,20 +53,39 @@ class TaskView extends View {
     this.subTaskBtn = this.parentEl.querySelector(".js-subtask-button");
     this.subTaskInput = this.parentEl.querySelector(".js-subtask-input");
     this._confirmTask();
+    this._setupClose();
     this._handleSubtask();
+  }
+
+  _setupClose() {
+    const closeBtn = this.parentEl.querySelector(".js-closeSetup");
+    closeBtn.addEventListener("click", () => {
+      closeBtn.closest(".js-task-setup").remove();
+    });
   }
 
   _handleSubtask() {
     this.subTaskBtn.addEventListener("click", () => {
       if (this.subTaskInput.value) {
         const markup = `
-          <div class='platform__new-subtasks'>
-          <input class="platform__task-input platform__task-input--subtask js-subtask-input" placeholder="e.g Go to walk">
-          <button type="button" class="platform__new-subtaskBtn"> Remove </button>
-          </div>
-          `;
+     <div class='platform__new-subtasks'>
+         <input class="platform__task-input platform__task-input--subtask js-subtask-input" placeholder="e.g Go to walk">
+         <button type="button" class="platform__new-subtaskBtn">
+             <img src='././images/close.png' class="platform__subtask-close" alt="close icon">
+         </button>
+     </div>
+            `;
 
         this.subTaskInput.insertAdjacentHTML("afterend", markup);
+
+        const removeBtn = this.parentEl.querySelector(
+          ".platform__new-subtaskBtn"
+        );
+
+        removeBtn.addEventListener("click", () => {
+          const subtaskContainer = removeBtn.closest(".platform__new-subtasks");
+          subtaskContainer.remove();
+        });
       }
     });
   }

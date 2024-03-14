@@ -7,6 +7,7 @@
   background-color: $lightPurple;
   text-align: center;
   border-radius: 20px;
+  z-index: 15;
 }
 
 .platform__confirm-tag {
@@ -41,6 +42,16 @@
   padding: 35px;
   background-color: $lightPurple;
   border-radius: 20px;
+  z-index: 15;
+
+  @include phone {
+    text-align: center;
+  }
+
+  @include phone {
+    padding: 25px;
+    max-width: 370px;
+  }
 }
 
 .platform__task-tag {
@@ -106,6 +117,7 @@
   border-radius: 10px;
   text-align: center;
   color: $white;
+  z-index: 15;
 }
 
 .platform__task-statsTag {
@@ -150,4 +162,17 @@
   color: $white;
   margin-bottom: 20px;
   font-size: 18px;
+}
+
+// Panel message
+.platform__message-holder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.platform__message {
+  color: $white;
+  font-size: 19px;
 }

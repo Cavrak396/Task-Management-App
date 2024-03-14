@@ -204,8 +204,14 @@ button {
 .platform__boards-button:hover {
   cursor: pointer;
 }
+@media screen and (max-width: 1200px) {
+  .platform__boards-button {
+    font-size: 14px;
+  }
+}
 
-.platform__boards-clear {
+.platform__boards-clear,
+.platform__new-subtaskBtn {
   position: relative;
   z-index: 20;
   max-width: 25px;
@@ -213,10 +219,21 @@ button {
   cursor: pointer;
 }
 
-.platform__boards-close {
+.platform__boards-close,
+.platform__subtask-close,
+.platform__close-setup {
   max-width: 100%;
   max-height: 100%;
   filter: invert(100%);
+  cursor: pointer;
+}
+
+.platform__task-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
 }
 
 .platform__board-btn {
@@ -259,6 +276,18 @@ button {
   font-weight: 600;
   padding: 15px 0;
   cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+  .platform__subtask-button,
+  .platform__newTask-button {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .platform__subtask-button,
+  .platform__newTask-button {
+    font-size: 12px;
+  }
 }
 
 .platform__subtask-button {
@@ -335,7 +364,13 @@ button {
   transform: translate(-100%, 0);
 }
 
+.platform__panel-holder {
+  background-color: rgb(40, 36, 44);
+  height: 100svh;
+}
+
 .platform__task-panel {
+  position: relative;
   background-color: rgb(40, 36, 44);
   min-height: 100svh;
 }
@@ -384,7 +419,7 @@ button {
 }
 @media screen and (max-width: 1200px) {
   .platform__boards-item {
-    font-size: 15px;
+    max-width: 110px;
   }
 }
 
@@ -397,6 +432,7 @@ button {
   background-color: rgb(48, 44, 60);
   text-align: center;
   border-radius: 20px;
+  z-index: 15;
 }
 
 .platform__confirm-tag {
@@ -430,6 +466,18 @@ button {
   padding: 35px;
   background-color: rgb(48, 44, 60);
   border-radius: 20px;
+  z-index: 15;
+}
+@media screen and (max-width: 767px) {
+  .platform__task-setup {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .platform__task-setup {
+    padding: 25px;
+    max-width: 370px;
+  }
 }
 
 .platform__task-tag {
@@ -494,6 +542,7 @@ button {
   border-radius: 10px;
   text-align: center;
   color: rgb(255, 255, 255);
+  z-index: 15;
 }
 
 .platform__task-statsTag {
@@ -539,12 +588,30 @@ button {
   font-size: 18px;
 }
 
+.platform__message-holder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.platform__message {
+  color: rgb(255, 255, 255);
+  font-size: 19px;
+}
+
 .platform__task-panel {
   padding: 20px 20px 0 20px;
 }
 
 .platform__task-line {
   display: flex;
+}
+@media screen and (max-width: 767px) {
+  .platform__task-line {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .platform__task-holder {
@@ -594,6 +661,11 @@ button {
   transition: all ease-in-out 0.5s;
   transform: scale(1.05);
 }
+@media screen and (max-width: 767px) {
+  .platform__task-item {
+    padding: 17px;
+  }
+}
 
 .platform__task-name,
 .platform__task-subtask {
@@ -606,8 +678,19 @@ button {
   font-size: 18px;
   margin-bottom: 8px;
 }
+@media screen and (max-width: 767px) {
+  .platform__task-name {
+    font-size: 15px;
+  }
+}
 
 .platform__task-subtask {
   color: rgb(150, 150, 150);
   font-size: 14px;
+}
+@media screen and (max-width: 767px) {
+  .platform__task-subtask {
+    font-size: 12px;
+    line-height: 15px;
+  }
 }

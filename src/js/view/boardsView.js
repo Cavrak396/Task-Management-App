@@ -43,14 +43,18 @@ class BoardsView extends View {
       const inputValue = this.parentEl.querySelector(".js-board-input").value;
       const formattedValue = inputValue.split(" ").join("-");
       const boardMarkup = `<li class="platform__boards-item js-boards-item">
-      <button type="button" class="platform__boards-button js-boards-buttonTag">${formattedValue}</button>
-      <button type="button" class="platform__boards-clear js-deleteBoard"> <img src="././images/close.png" class="platform__boards-close" alt="close image"></button>
+        <button type="button" class="platform__boards-button js-boards-buttonTag">${formattedValue}</button>
+        <button type="button" class="platform__boards-clear js-deleteBoard"> <img src="././images/close.png" class="platform__boards-close" alt="close image"></button>
       </li>`;
 
       this.boardsList.insertAdjacentHTML("afterbegin", boardMarkup);
 
       const newBoarditem = document.querySelector(".js-boards-item");
-      this.mainBoardItem.classList.remove("activate-board"); // FIX THIS !!!!
+
+      document.querySelectorAll(".js-boards-item").forEach((item) => {
+        item.classList.remove("activate-board");
+      });
+
       newBoarditem.classList.add("activate-board");
       this.platformTitle.textContent = formattedValue;
       data.push(boardMarkup); // for local storage!
@@ -59,31 +63,6 @@ class BoardsView extends View {
       this._activateBoard();
       this._createUserPanel(formattedValue);
       this._deleteBoard();
-    });
-  }
-
-  _deleteBoard() {
-    this.deleteBtn = document.querySelectorAll(".js-deleteBoard");
-    this.deleteBtn.forEach((deleteBtn) => {
-      deleteBtn.addEventListener("click", () => {
-        const boardItem = deleteBtn.closest(".js-boards-item");
-        const boardBtn = boardItem.querySelector(
-          ".js-boards-buttonTag"
-        ).textContent;
-        const panel = this.panelHolder.querySelector(
-          `.platform__panel-${boardBtn}`
-        );
-        boardItem.remove();
-        panel.remove();
-        this.mainBoardItem.classList.add("activate-board");
-      });
-    });
-  }
-
-  _discardBoard() {
-    const discardBtn = this.parentEl.querySelector(".js-discard-btn");
-    discardBtn.addEventListener("click", () => {
-      discardBtn.closest(".js-confirm-board").remove();
     });
   }
 
@@ -107,6 +86,42 @@ class BoardsView extends View {
         if (panel) panel.style.display = "block";
       });
     });
+  }
+
+  _deleteBoard() {
+    this.deleteBtn = document.querySelectorAll(".js-deleteBoard");
+    this.deleteBtn.forEach((deleteBtn) => {
+      deleteBtn.addEventListener("click", () => {
+        const boardItem = deleteBtn.closest(".js-boards-item");
+        const boardBtn = boardItem.querySelector(
+          ".js-boards-buttonTag"
+        ).textContent;
+        const panel = this.panelHolder.querySelector(
+          `.platform__panel-${boardBtn}`
+        );
+        boardItem.remove();
+        panel.remove();
+        this._panelMessage();
+      });
+    });
+  }
+
+  _discardBoard() {
+    const discardBtn = this.parentEl.querySelector(".js-discard-btn");
+    discardBtn.addEventListener("click", () => {
+      discardBtn.closest(".js-confirm-board").remove();
+    });
+  }
+
+  _panelMessage() {
+    const markup = `
+    <div class="platform__message-holder"> 
+    <p class="platform__message"> There is no any tasks, please select board! :) </p>
+    </div>
+    `;
+
+    this.platformTitle.textContent = "Oopss, select board! :)";
+    this.panelHolder.insertAdjacentHTML("afterbegin", markup);
   }
 
   _createUserPanel(name) {

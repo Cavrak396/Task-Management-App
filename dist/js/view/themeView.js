@@ -15,7 +15,7 @@ class ThemeView {
     } else {
       this.platformBoards.style.backgroundColor = "#303c48";
       this.platformHeader.style.backgroundColor = "#303c48";
-      this.taskPanel.style.backgroundColor = "#F0F0F0";
+      this.taskPanel.style.backgroundColor = "#DCDCDC";
     }
     this.isDarkTheme = !this.isDarkTheme;
   }
