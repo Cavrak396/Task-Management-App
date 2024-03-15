@@ -6,16 +6,36 @@
 }
 
 .platform__boards {
+  position: relative;
   max-width: 15%;
   flex: 1 1 15%;
   background-color: $lightPurple;
   border-right: solid 1px $gray;
   padding-top: 25px;
+  transition: $regular;
+
+  @include small_tablet {
+    position: absolute;
+    max-width: 100%;
+    flex: 1 1 100%;
+    top: -100%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 20;
+    text-align: center;
+    border: none;
+  }
 }
 
 .platform__user-tasks {
   max-width: 85%;
   flex: 1 1 85%;
+
+  @include small_tablet {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
 }
 
 .platform__task-header {
@@ -31,6 +51,10 @@
 .platform__task-title {
   font-size: 25px;
   font-weight: $lightSemi;
+
+  @include phone {
+    font-size: 15px;
+  }
 }
 
 .platform__task-options {
@@ -39,6 +63,10 @@
   justify-content: space-between;
   max-width: 250px;
   flex: 1 1 250px;
+
+  @include small_tablet {
+    max-width: 295px;
+  }
 }
 
 .moving-theme-scroll {
@@ -93,6 +121,7 @@
   padding: 15px 10px;
   border-radius: 0 20px 20px 0;
   margin-bottom: 15px;
+  overflow: hidden;
 
   @include hover {
     cursor: pointer;
@@ -102,5 +131,9 @@
 
   @include tablet {
     max-width: 110px;
+  }
+
+  @include phone {
+    max-width: 90%;
   }
 }

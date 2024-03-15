@@ -92,16 +92,33 @@ class BoardsView extends View {
     this.deleteBtn = document.querySelectorAll(".js-deleteBoard");
     this.deleteBtn.forEach((deleteBtn) => {
       deleteBtn.addEventListener("click", () => {
-        const boardItem = deleteBtn.closest(".js-boards-item");
-        const boardBtn = boardItem.querySelector(
-          ".js-boards-buttonTag"
-        ).textContent;
-        const panel = this.panelHolder.querySelector(
-          `.platform__panel-${boardBtn}`
-        );
-        boardItem.remove();
-        panel.remove();
-        this._panelMessage();
+        // Markup
+        const markup = `
+      <div class="panel__delete-confirm">
+       <span class="panel__delete-title"> Are you sure? </span>
+       <div class="panel__delete-buttons">
+       <button type="button" class="panel__delete-btn js-delete-yes"> Yes </button>
+       <button type="button" class="panel__delete-btn js-delete-no"> No </button>
+       </div>
+      </div>
+      `;
+        this.parentEl.insertAdjacentHTML("afterbegin", markup);
+
+        const acceptBtn = this.parentEl.querySelector(".js-delete-yes");
+
+        acceptBtn.addEventListener("click", () => {
+          const boardItem = deleteBtn.closest(".js-boards-item");
+          const boardBtn = boardItem.querySelector(
+            ".js-boards-buttonTag"
+          ).textContent;
+          const panel = this.panelHolder.querySelector(
+            `.platform__panel-${boardBtn}`
+          );
+          boardItem.remove();
+          panel.remove();
+          this._panelMessage();
+          acceptBtn.closest(".panel__delete-confirm").remove();
+        });
       });
     });
   }

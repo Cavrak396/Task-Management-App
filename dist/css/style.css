@@ -153,6 +153,10 @@ input {
   background-color: rgb(100, 96, 192);
 }
 
+.activate-sidebar {
+  top: 0 !important;
+}
+
 button {
   border: none;
   background: none;
@@ -171,6 +175,11 @@ button {
   transition: all ease-in-out 0.5s;
   transform: scale(1.05);
 }
+@media screen and (max-width: 767px) {
+  .platform__task-button {
+    font-size: 12px;
+  }
+}
 
 .platform__task-theme {
   position: relative;
@@ -180,6 +189,13 @@ button {
   border: solid 1px rgb(255, 255, 255);
   border-radius: 20px;
   background-color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 767px) {
+  .platform__task-theme {
+    min-height: 17px;
+    max-width: 35px;
+    flex: 1 1 35px;
+  }
 }
 
 .platform__task-scroll {
@@ -194,6 +210,11 @@ button {
 }
 .platform__task-scroll:hover {
   cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+  .platform__task-scroll {
+    width: 15px;
+  }
 }
 
 .platform__boards-button {
@@ -221,7 +242,8 @@ button {
 
 .platform__boards-close,
 .platform__subtask-close,
-.platform__close-setup {
+.platform__close-setup,
+.platform__responsive-show {
   max-width: 100%;
   max-height: 100%;
   filter: invert(100%);
@@ -234,6 +256,14 @@ button {
   right: 20px;
   width: 30px;
   height: 30px;
+}
+@media screen and (max-width: 767px) {
+  .platform__task-close {
+    top: 15px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+  }
 }
 
 .platform__board-btn {
@@ -280,13 +310,9 @@ button {
 @media screen and (max-width: 767px) {
   .platform__subtask-button,
   .platform__newTask-button {
-    max-width: 80%;
-  }
-}
-@media screen and (max-width: 767px) {
-  .platform__subtask-button,
-  .platform__newTask-button {
-    font-size: 12px;
+    max-width: 55%;
+    font-size: 11px;
+    padding: 11px 0;
   }
 }
 
@@ -294,6 +320,11 @@ button {
   background-color: rgb(255, 255, 255);
   color: rgb(100, 96, 192);
   margin-bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+  .platform__subtask-button {
+    margin-bottom: 14px;
+  }
 }
 
 .platform__newTask-button {
@@ -315,6 +346,44 @@ button {
   transition: all ease-in-out 0.5s;
 }
 
+.panel__delete-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.panel__delete-btn {
+  display: block;
+  color: rgb(255, 255, 255);
+  background-color: rgb(100, 96, 192);
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.platform__responsive-button {
+  display: none;
+  max-width: 40px;
+  flex: 1 1 40px;
+  min-height: 40px;
+}
+@media screen and (max-width: 975px) {
+  .platform__responsive-button {
+    display: block;
+  }
+}
+@media screen and (max-width: 767px) {
+  .platform__responsive-button {
+    max-width: 35px;
+    flex: 1 1 35px;
+  }
+}
+
+.platform__responsive-button--bar {
+  margin: 0 auto;
+}
+
 .platform {
   position: relative;
   display: flex;
@@ -323,16 +392,38 @@ button {
 }
 
 .platform__boards {
+  position: relative;
   max-width: 15%;
   flex: 1 1 15%;
   background-color: rgb(48, 44, 60);
   border-right: solid 1px rgb(150, 150, 150);
   padding-top: 25px;
+  transition: all ease-in-out 0.5s;
+}
+@media screen and (max-width: 975px) {
+  .platform__boards {
+    position: absolute;
+    max-width: 100%;
+    flex: 1 1 100%;
+    top: -100%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 20;
+    text-align: center;
+    border: none;
+  }
 }
 
 .platform__user-tasks {
   max-width: 85%;
   flex: 1 1 85%;
+}
+@media screen and (max-width: 975px) {
+  .platform__user-tasks {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
 }
 
 .platform__task-header {
@@ -349,6 +440,11 @@ button {
   font-size: 25px;
   font-weight: 500;
 }
+@media screen and (max-width: 767px) {
+  .platform__task-title {
+    font-size: 15px;
+  }
+}
 
 .platform__task-options {
   display: flex;
@@ -356,6 +452,11 @@ button {
   justify-content: space-between;
   max-width: 250px;
   flex: 1 1 250px;
+}
+@media screen and (max-width: 975px) {
+  .platform__task-options {
+    max-width: 295px;
+  }
 }
 
 .moving-theme-scroll {
@@ -411,6 +512,7 @@ button {
   padding: 15px 10px;
   border-radius: 0 20px 20px 0;
   margin-bottom: 15px;
+  overflow: hidden;
 }
 .platform__boards-item:hover {
   cursor: pointer;
@@ -420,6 +522,11 @@ button {
 @media screen and (max-width: 1200px) {
   .platform__boards-item {
     max-width: 110px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .platform__boards-item {
+    max-width: 90%;
   }
 }
 
@@ -432,7 +539,13 @@ button {
   background-color: rgb(48, 44, 60);
   text-align: center;
   border-radius: 20px;
-  z-index: 15;
+  z-index: 25;
+}
+@media screen and (max-width: 767px) {
+  .platform__confirm-board {
+    background-color: rgb(40, 36, 44);
+    padding: 30px 20px;
+  }
 }
 
 .platform__confirm-tag {
@@ -471,12 +584,8 @@ button {
 @media screen and (max-width: 767px) {
   .platform__task-setup {
     text-align: center;
-  }
-}
-@media screen and (max-width: 767px) {
-  .platform__task-setup {
-    padding: 25px;
-    max-width: 370px;
+    padding: 15px;
+    max-width: 265px;
   }
 }
 
@@ -484,6 +593,11 @@ button {
   font-size: 20px;
   color: rgb(255, 255, 255);
   margin-bottom: 30px;
+}
+@media screen and (max-width: 767px) {
+  .platform__task-tag {
+    font-size: 16px;
+  }
 }
 
 .platform__task-label,
@@ -506,6 +620,11 @@ button {
   margin-bottom: 5px;
   font-size: 14px;
 }
+@media screen and (max-width: 767px) {
+  .platform__task-label {
+    font-size: 12px;
+  }
+}
 
 .platform__task-input {
   width: 100%;
@@ -515,9 +634,20 @@ button {
   padding-left: 10px;
   margin-bottom: 20px;
 }
+@media screen and (max-width: 767px) {
+  .platform__task-input {
+    height: 35px;
+    font-size: 11px;
+  }
+}
 
 .platform__task-description {
   padding: 20px 0 120px 10px;
+}
+@media screen and (max-width: 767px) {
+  .platform__task-description {
+    padding: 15px 0 15px 10px;
+  }
 }
 
 .platform__task-chooser {
@@ -529,6 +659,13 @@ button {
   border-radius: 10px;
   margin-bottom: 30px;
   padding-left: 10px;
+}
+@media screen and (max-width: 767px) {
+  .platform__task-chooser {
+    height: 30px;
+    width: 70%;
+    margin-bottom: 11px;
+  }
 }
 
 .platform__task-stats {
@@ -598,6 +735,26 @@ button {
 .platform__message {
   color: rgb(255, 255, 255);
   font-size: 19px;
+}
+
+.panel__delete-confirm {
+  position: absolute;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(48, 44, 60);
+  border-radius: 10px;
+  padding: 57px 100px;
+  text-align: center;
+}
+
+.panel__delete-title {
+  display: block;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
 .platform__task-panel {

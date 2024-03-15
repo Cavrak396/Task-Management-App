@@ -7,7 +7,12 @@
   background-color: $lightPurple;
   text-align: center;
   border-radius: 20px;
-  z-index: 15;
+  z-index: 25;
+
+  @include phone {
+    background-color: $darkPurple;
+    padding: 30px 20px;
+  }
 }
 
 .platform__confirm-tag {
@@ -46,11 +51,8 @@
 
   @include phone {
     text-align: center;
-  }
-
-  @include phone {
-    padding: 25px;
-    max-width: 370px;
+    padding: 15px;
+    max-width: 265px;
   }
 }
 
@@ -58,6 +60,10 @@
   font-size: 20px;
   color: $white;
   margin-bottom: 30px;
+
+  @include phone {
+    font-size: 16px;
+  }
 }
 
 .platform__task-label,
@@ -79,6 +85,10 @@
 .platform__task-label {
   margin-bottom: 5px;
   font-size: 14px;
+
+  @include phone {
+    font-size: 12px;
+  }
 }
 
 .platform__task-input {
@@ -88,10 +98,19 @@
   border-radius: 5px;
   padding-left: 10px;
   margin-bottom: 20px;
+
+  @include phone {
+    height: 35px;
+    font-size: 11px;
+  }
 }
 
 .platform__task-description {
   padding: 20px 0 120px 10px;
+
+  @include phone {
+    padding: 15px 0 15px 10px;
+  }
 }
 
 .platform__task-chooser {
@@ -103,6 +122,12 @@
   border-radius: 10px;
   margin-bottom: 30px;
   padding-left: 10px;
+
+  @include phone {
+    height: 30px;
+    width: 70%;
+    margin-bottom: 11px;
+  }
 }
 
 // Status
@@ -175,4 +200,25 @@
 .platform__message {
   color: $white;
   font-size: 19px;
+}
+
+// Delete board
+.panel__delete-confirm {
+  position: absolute;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $lightPurple;
+  border-radius: 10px;
+  padding: 57px 100px;
+  text-align: center;
+}
+
+.panel__delete-title {
+  display: block;
+  font-size: 25px;
+  color: $white;
+  font-weight: $semi;
+  margin-bottom: 15px;
 }
